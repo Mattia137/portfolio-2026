@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fragment Mono', monospace;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background-color: black;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio based on width */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 aspect ratio based on height (1.77 * 100vh) */
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.name {
+  font-size: 1.0rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.location {
+  font-size: 0.6rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.status {
+  font-size: 0.6rem;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.contacts a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 0.6rem;
+  margin-bottom: 0.4rem;
+  transition: opacity 0.3s;
+}
+
+.contacts a:hover {
+  opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+  .content {
+    bottom: 10%;
+  }
+  
+  .name {
+    font-size: 1.3rem;
+  }
+  
+  .location, .status, .contacts a {
+    font-size: 0.8rem;
+  }
+}
