@@ -1,0 +1,7 @@
+# Private sketchbook: served at /sketchbook/ but never indexed by search engines.
+# Nothing on the public site links to it; share the URL directly.
+[[headers]]
+  for = "/sketchbook/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive, noimageindex"
+    Referrer-Policy = "no-referrer"

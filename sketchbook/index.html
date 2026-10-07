@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mattia Galbusera — Sketchbook</title>
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><button id="close" aria-label="Return to cover">BACK TO COVER</button><span>MATTIA GALBUSERA / SKETCHBOOK</span><span id="counter" aria-live="polite">COVER</span></header>
+<main>
+<button class="arrow previous" id="previous" aria-label="Previous page"><svg viewBox="0 0 24 48"><path d="M20 4 4 24l16 20"/></svg></button>
+<div class="stage"><div id="book" aria-label="Interactive sketchbook"></div></div>
+<button class="arrow next" id="next" aria-label="Next page"><svg viewBox="0 0 24 48"><path d="m4 4 16 20L4 44"/></svg></button>
+</main>
+<footer><span id="hint">CLICK THE COVER TO OPEN</span><button id="zoom" disabled>VIEW PAGE</button></footer>
+<dialog id="viewer"><div class="viewer-tools"><button id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-level" aria-live="polite">100%</output><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-fit">FIT</button><span>SCROLL TO ZOOM · DRAG TO PAN</span></div><button id="dismiss" aria-label="Close enlarged page">CLOSE ×</button><div id="enlarged" tabindex="0" aria-label="Zoomable pages. Use plus and minus to zoom, arrow keys to pan."><div id="page-canvas"></div></div></dialog>
+<script src="vendor/page-flip.browser.js"></script><script src="app.js"></script>
+</body>
+</html>
