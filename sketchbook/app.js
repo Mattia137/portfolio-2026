@@ -1,5 +1,5 @@
 const book = document.getElementById('book');
-const count = 20;
+const count = 31;
 const makePage = (className, number) => {
   const page = document.createElement('div');
   page.className = `page ${className}`;
@@ -22,7 +22,10 @@ book.lastElementChild.append(coverImage);
 makePage('endpaper');
 for(let n=1;n<=count;n++) makePage('',n);
 makePage('endpaper');
+// Keep the total page count even so the back cover sits on its own.
+if (count % 2) makePage('endpaper');
 makePage('cover back-cover');
+const lastIndex = book.querySelectorAll('.page').length - 1;
 const stage = document.querySelector('.stage');
 const availableHeight = stage.clientHeight;
 const availableWidth = stage.clientWidth;
@@ -39,17 +42,17 @@ const next = document.getElementById('next');
 const zoom = document.getElementById('zoom');
 function visiblePages() {
   const index=flipbook.getCurrentPageIndex();
-  return (flipbook.getOrientation()==='portrait'?[index]:[index,index+1]).filter(n=>n>=2&&n<=21).map(n=>n-1);
+  return (flipbook.getOrientation()==='portrait'?[index]:[index,index+1]).filter(n=>n>=2&&n<=count+1).map(n=>n-1);
 }
 function update() {
   const index = flipbook.getCurrentPageIndex();
   const landscape = flipbook.getOrientation()==='landscape';
   book.classList.toggle('closed', index===0&&landscape);
-  book.classList.toggle('back',index===23&&landscape);
+  book.classList.toggle('back',index===lastIndex&&landscape);
   previous.disabled=index===0;
-  next.disabled=index===23;
+  next.disabled=index===lastIndex;
   const pages=visiblePages();
-  document.getElementById('counter').textContent=index===0?'COVER':index===23?'BACK COVER':pages.length?`${pages.map(n=>String(n).padStart(2,'0')).join(' – ')} / 20`:'ENDPAPER';
+  document.getElementById('counter').textContent=index===0?'COVER':index===lastIndex?'BACK COVER':pages.length?`${pages.map(n=>String(n).padStart(2,'0')).join(' – ')} / ${count}`:'ENDPAPER';
   document.getElementById('hint').textContent=index===0?'CLICK THE COVER TO OPEN':'DRAG A CORNER, CLICK, OR USE ← →';
   zoom.disabled=!pages.length;
 }
