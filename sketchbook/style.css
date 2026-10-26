@@ -6,3 +6,6 @@
 
 .viewer-tools{position:absolute;top:12px;left:18px;height:32px;display:flex;align-items:center;gap:12px;font-size:11px}.viewer-tools button{padding:8px;font-size:14px}.viewer-tools span{font-size:8px;color:#777}.viewer-tools output{min-width:40px;text-align:center}#enlarged{display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:none;cursor:grab;position:relative}#enlarged.dragging{cursor:grabbing}#page-canvas{display:flex;gap:8px;flex-shrink:0;transform-origin:center;will-change:transform;pointer-events:none}#page-canvas img{height:100%;width:auto;max-width:none;object-fit:contain;user-select:none}@media(max-width:650px){.viewer-tools{gap:4px;left:8px}.viewer-tools span{display:none}#enlarged{display:flex}}
 
+
+/* MG_Sketches cover: white front fill and plain white back cover (placeholder). */
+.cover img{background:#fff}.back-cover{background:#fff}

@@ -1,5 +1,5 @@
 const book = document.getElementById('book');
-const count = 31;
+const count = 30;
 const makePage = (className, number) => {
   const page = document.createElement('div');
   page.className = `page ${className}`;
@@ -16,7 +16,7 @@ const makePage = (className, number) => {
 makePage('cover front-cover');
 const coverImage = new Image();
 coverImage.src = 'assets/cover.webp';
-coverImage.alt = 'Works 2026 — Mattia Galbusera';
+coverImage.alt = 'Sketchbook — Mattia Galbusera';
 coverImage.draggable = false;
 book.lastElementChild.append(coverImage);
 makePage('endpaper');
