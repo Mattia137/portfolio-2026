@@ -1,6 +1,6 @@
 # Mattia Galbusera — Sketchbook
 
-A standalone flipbook with the MG_Sketches_01 front cover and a plain white back cover (placeholder) and all 30 sketch pages in order.
+A standalone flipbook with the MG_Sketches_01 front cover and a plain white back cover (placeholder) and all 42 sketch pages in order.
 
 Open `index.html` in a browser. Everything is included locally; no build or account is needed. You can also upload this folder to any static website host.
 

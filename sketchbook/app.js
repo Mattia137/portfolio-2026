@@ -1,5 +1,5 @@
 const book = document.getElementById('book');
-const count = 30;
+const count = 42;
 const makePage = (className, number) => {
   const page = document.createElement('div');
   page.className = `page ${className}`;
